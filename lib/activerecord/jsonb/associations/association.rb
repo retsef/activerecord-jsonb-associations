@@ -15,7 +15,7 @@ module ActiveRecord
         end
 
         # rubocop:disable Metrics/AbcSize
-        def create_scope
+        def scope_for_create
           super.tap do |scope|
             next unless options.key?(:foreign_store)
             scope[options[:foreign_store].to_s] ||= {}
